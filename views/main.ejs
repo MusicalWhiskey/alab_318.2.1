@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Main Page with EJS</title>
+  <title>Main</title>
+  
 </head>
 <body>
   <nav>
-    <a href="/info">Info about this Company</a>
+    <a href="/info">Info</a>
   </nav>
-  <h1>Welcome to the Main Page!</h1>
-  <form action="/submit" method="POST">
-    <input type="text" name="data" placeholder="Enter some data">
-    <button type="submit">Submit</button>
-  </form>
+  <div class="image-container">
+    <img src="../public_data/Funny_Dog_Detective.jpg" alt="Detective Dog" style="max-width: 100%; height: auto;">
+    <form action="/download" method="GET">
+      <button type="submit">Download Image</button>
+    </form>
+  </div>
 </body>
 </html>

@@ -1,4 +1,6 @@
 const express = require("express")
+const morgan = require("morgan")
+const path = require("path")
 const app = express()
 const PORT = 3000;
 
@@ -7,7 +9,13 @@ app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/static', express.static('public'));
+app.use('/static', express.static(path.join(__dirname, 'public_data')));
+
+// Middleware
+app.use((req, res, next) => {
+    console.log(`${req.method} ${req.url}`);
+    next(); 
+  });
 
 
 console.log("ALAB 318.2.1");
