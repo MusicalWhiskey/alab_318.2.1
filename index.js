@@ -33,6 +33,7 @@ app.get('/', (req, res) => {
     res.send('Success');
   });
 
+  //Here is the download method
   app.get('/download', (req, res) => {
     const filePath = path.join(__dirname, 'public_data', 'Funny_Dog_Detective.jpg');
     res.download(filePath);
