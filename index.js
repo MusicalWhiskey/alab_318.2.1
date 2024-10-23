@@ -9,7 +9,7 @@ app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/static', express.static(path.join(__dirname, 'public_data')));
+app.use('/static', express.static(path.join(__dirname, './public_data')));
 
 // Middleware
 app.use((req, res, next) => {
@@ -31,6 +31,11 @@ app.get('/', (req, res) => {
   app.post('/submit', (req, res) => {
     console.log(req.body.data);
     res.send('Success');
+  });
+
+  app.get('/download', (req, res) => {
+    const filePath = path.join(__dirname, 'public_data', 'Funny_Dog_Detective.jpg');
+    res.download(filePath);
   });
   
   // Route with parameter
